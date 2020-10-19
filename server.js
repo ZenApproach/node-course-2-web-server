@@ -2,7 +2,6 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 const port = process.env.PORT || 3000; 
-const { text } = require('express');
 
 //Page 450 
 
@@ -26,6 +25,12 @@ app.get('/', (req, res) => {
         pageTitle: 'Home Page',
         welcomeMessage: 'Welcome to my website',
     })
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects Page',
+    });
 });
 
 app.get('/about', (req, res) => {
